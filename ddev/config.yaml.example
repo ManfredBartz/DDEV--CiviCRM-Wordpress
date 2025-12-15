@@ -1,0 +1,10 @@
+## ddev/config.yaml.example (safe template)
+
+```yaml
+# Example only — do not assume it matches every environment
+name: example-project
+type: wordpress
+docroot: ""
+php_version: "8.3"
+webserver_type: nginx-fpm
+xdebug_enabled: false

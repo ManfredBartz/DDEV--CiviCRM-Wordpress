@@ -1,0 +1,19 @@
+# Editors
+*~
+*.swp
+.vscode/
+.idea/
+
+# OS junk
+.DS_Store
+
+# Nothing runtime-related should ever be committed
+wp-config.php
+wp-content/
+uploads/
+vendor/
+
+# DDEV runtime files
+.ddev/.dbimageBuild
+.ddev/.ddev-docker-compose*
+.ddev/.ddev-state*
