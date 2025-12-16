@@ -1,11 +1,25 @@
-<<<<<<< HEAD
 # DDEV--CiviCRM-Wordpress
-Documentation and helper scripts for maintaining a DDEV-based CiviCRM on WordPress “gold baseline” and creating clean clones for development and testing of CiviCRM extensions and WP plugins.
-=======
-# DDEV WordPress + CiviCRM Baseline (Docs + Scripts)
 
-This repo contains documentation and scripts for maintaining a “gold baseline” DDEV project
-with WordPress + CiviCRM, and creating clean clones for extension development/testing.
+## Why this exists
+
+Cloning a DDEV-based CiviCRM on WordPress site for development or testing is
+surprisingly fragile.
+
+In particular, the CiviCRM WordPress installer writes host-specific absolute
+URLs into `wp-content/uploads/civicrm/civicrm.settings.php` and into generated
+persistent assets. When a site is cloned (for example using DDEV snapshots),
+these values are not automatically updated, which can cause the CiviCRM admin
+UI to load with missing menus, broken JavaScript, or a blank home page.
+
+This repository documents a proven, repeatable workflow for:
+
+- maintaining a clean “gold baseline” WordPress + CiviCRM DDEV project
+- creating disposable clones for development and testing
+- neutralising non-portable CiviCRM URL settings
+- forcing safe regeneration of persistent assets
+
+The repository intentionally contains **only documentation and helper scripts**.
+It does not include WordPress core, CiviCRM core, databases, or DDEV snapshots.
 
 ## Contents
 - `documentation.md` – end-to-end instructions
@@ -26,4 +40,3 @@ cd cloneN
 /path/to/repo/scripts/clone-prepare.sh
 ddev snapshot restore v1.0-wp_civi_baseline   # choose snapshot manually
 /path/to/repo/scripts/clone-cleanup.sh
->>>>>>> 22c5776 (Initial documentation and clone scripts for DDEV WordPress + CiviCRM environment)
